@@ -25,12 +25,12 @@ def localize_image_textures():
 			continue
 
 		image_path = bpy.path.abspath(image.filepath)
-		if not os.path.isfile(image_path):
-			print(f"Skipping missing image: {image_path}")
-			continue
-
 		image_name = os.path.basename(image_path)
 		new_path = os.path.join(textures_dir, image_name)
+		if not os.path.isfile(image_path) and not os.path.isfile(new_path):
+			print(f"Skipping missing image: {image_path}")
+			continue
+		
 		if image_path not in copied_images:
 			if not os.path.exists(new_path):
 				shutil.copy2(image_path, new_path)

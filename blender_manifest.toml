@@ -2,7 +2,7 @@ schema_version = "1.0.0"
 
 # Example of manifest file for a Blender extension
 # Change the values according to your extension
-id = "localize_texture_images"
+id = "file_localizer"
 version = "1.0.0"
 name = "Localize texture images"
 tagline = "Copies all image texture files to a local dir"
